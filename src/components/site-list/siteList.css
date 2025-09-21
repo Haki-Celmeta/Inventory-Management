@@ -59,3 +59,34 @@
         width: 100%;
     }
 }
+
+.create-site-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.create-site-modal form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.create-site-modal form .dropdowns {
+    display: flex;
+    gap: 1rem;
+}
+
+.create-site-modal form .dropdowns div:first-child {
+    flex: 2;
+}
+
+.create-site-modal form .dropdowns div:last-child {
+    flex: 1;
+}
+
+.create-site-modal .modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: end;
+    margin-top: 6rem;
+}

@@ -1,5 +1,4 @@
 import "./tableOfSites.css"
-import Dropdown from "../dropdown/Dropdown.jsx";
 import {capitalizeEachWord, darkColor, extraLightColor, lightColor} from "../utils.js";
 import {useJobSite} from "../context/JobSiteContext.jsx";
 

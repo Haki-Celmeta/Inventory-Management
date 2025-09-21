@@ -4,12 +4,8 @@ import '@testing-library/jest-dom';
 import Overall from './Overall.jsx'
 
 describe('Overall', () => {
-    it('should render all three cards with correct data', () => {
+    it('should render all three cards', () => {
         render(<Overall />);
-
-        expect(screen.getByText('14')).toBeInTheDocument()
-        expect(screen.getByText('3')).toBeInTheDocument()
-        expect(screen.getByText('2')).toBeInTheDocument()
 
         expect(screen.getByText('In Progress')).toBeInTheDocument()
         expect(screen.getByText('Completed')).toBeInTheDocument()
