@@ -4,6 +4,7 @@ import Button from "../button/Button.jsx";
 import TableOfSites from "./TableOfSites.jsx";
 import {useState} from "react";
 import Modal from "../modal/Modal.jsx";
+import CreateSiteModal from "./CreateSiteModal.jsx";
 
 const mockJobList = [
     {
@@ -60,15 +61,7 @@ const SiteList = () => {
                 <TableOfSites jobsites={mockJobList} />
             </div>
 
-            <Modal
-                isOpen={isModalOpen}
-                onClose={closeModal}
-                title="Example Modal"
-            >
-                <div>
-                    <h3>Modal Content</h3>
-                </div>
-            </Modal>
+            <CreateSiteModal isModalOpen={isModalOpen} closeModal={closeModal} />
         </div>
     )
 }
