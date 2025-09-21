@@ -7,34 +7,6 @@ import Modal from "../modal/Modal.jsx";
 import CreateSiteModal from "./CreateSiteModal.jsx";
 import {useJobSite} from "../context/JobSiteContext.jsx";
 
-const mockJobList = [
-    {
-        id: 1,
-        name: "John Doe",
-        status: "completed",
-    },
-    {
-        id: 2,
-        name: "John Doe 2",
-        status: "on hold",
-    },
-    {
-        id: 3,
-        name: "John Doe 3",
-        status: "in progress",
-    },
-    {
-        id: 4,
-        name: "John Doe 4",
-        status: "completed",
-    },
-    {
-        id: 5,
-        name: "John Doe 5",
-        status: "on hold",
-    }
-]
-
 const SiteList = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const {data} = useJobSite()
