@@ -2,6 +2,8 @@ import {Search} from 'lucide-react'
 import "./siteList.css"
 import Button from "../button/Button.jsx";
 import TableOfSites from "./TableOfSites.jsx";
+import {useState} from "react";
+import Modal from "../modal/Modal.jsx";
 
 const mockJobList = [
     {
@@ -32,6 +34,11 @@ const mockJobList = [
 ]
 
 const SiteList = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
     return (
         <div className={'site-list-container'}>
             <div className={'title'}>
@@ -46,12 +53,22 @@ const SiteList = () => {
                     />
                 </div>
                 <div className={'create'}>
-                    <Button variant={'save'} color={'light'}/>
+                    <Button variant={'save'} color={'light'} onClick={openModal}/>
                 </div>
             </div>
             <div className={'jobsite-table-container'}>
                 <TableOfSites jobsites={mockJobList} />
             </div>
+
+            <Modal
+                isOpen={isModalOpen}
+                onClose={closeModal}
+                title="Example Modal"
+            >
+                <div>
+                    <h3>Modal Content</h3>
+                </div>
+            </Modal>
         </div>
     )
 }

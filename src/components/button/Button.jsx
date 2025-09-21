@@ -2,7 +2,7 @@ import {X, Plus, Check, ArrowLeft} from 'lucide-react'
 import {capitalizeEachWord, lightColor, mediumColor} from "../utils.js";
 import "./button.css"
 
-const Button = ({variant = 'default', colorTone = 'medium'}) => {
+const Button = ({variant = 'default', colorTone = 'medium', onClick}) => {
     const iconSize = 20
 
     const config = {
@@ -39,6 +39,7 @@ const Button = ({variant = 'default', colorTone = 'medium'}) => {
         <button
             className={'button'}
             style={{backgroundColor: color}}
+            onClick={onClick}
         >
             <span>{text}</span>
             {icon !== null && <span data-testid={'icon'}>{icon}</span>}

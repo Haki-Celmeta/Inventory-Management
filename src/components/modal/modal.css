@@ -1,0 +1,146 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--light-gray);
+    padding: 4px 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    color: #666;
+    transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.modal-content {
+    padding: 20px;
+    max-height: calc(90vh - 80px);
+    overflow-y: auto;
+}
+
+/* Page Styles */
+.page-content {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    padding: 40px 20px;
+}
+
+.page-content h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.content-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.content-box h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.content-box h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.content-box p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.open-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.open-btn:hover {
+    background-color: #0056b3;
+}
+
+.close-btn {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.close-btn:hover {
+    background-color: #545b62;
+}
+
+/* Modal Content Styling */
+.modal-content h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.modal-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
