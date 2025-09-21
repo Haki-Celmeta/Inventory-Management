@@ -12,16 +12,16 @@ const CreateSiteModal = ({isModalOpen, closeModal}) => {
                 <form>
                     <div>
                         <label htmlFor="name" className="form-label">Name</label>
-                        <input id={'name'} placeholder={"Type the jobsite's name"}/>
+                        <input className={'input'} id={'name'} placeholder={"Type the jobsite's name"}/>
                     </div>
                     <div>
                         <div>
                             <label htmlFor="category" className="form-label">Category Included</label>
-                            <input id={'name'} placeholder={"Select"}/>
+                            <input className={'input'} id={'name'} placeholder={"Select"}/>
                         </div>
                         <div>
                             <label htmlFor="status" className="form-label">Status</label>
-                            <input id={'status'} placeholder={"Select one"}/>
+                            <input className={'input'} id={'status'} placeholder={"Select one"}/>
                         </div>
                     </div>
                 </form>
