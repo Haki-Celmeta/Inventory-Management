@@ -1,0 +1,26 @@
+.overall {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 6px;
+    background-color: #fff;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.overall-card {
+    color: #fff;
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.35rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem 0;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .overall {
+        grid-template-columns: 1fr;
+    }
+}

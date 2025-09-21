@@ -1,0 +1,51 @@
+# Inventory Management
+
+This project is the implementation of the **Flex Business Solutions Tech Test**.  
+The goal of this task is to create a simple inventory management app based on the provided Figma design.
+
+The app allows users to:
+- View a list of job sites with their statuses.
+- Create new job sites.
+- Navigate to a job site’s inventory dashboard.
+- Search and filter job sites and inventory items.
+- Update inventory items by editing table cells.
+
+---
+
+## 🚀 Tech Stack
+- **React (with Vite)** – Frontend framework & development environment
+- **Vanilla CSS** – Styling
+- **React Testing Library / Jest** – Unit testing
+
+---
+
+## 📸 Screenshots
+Finished app screenshots are included inside the `screenshots/` folder of this repository.
+
+---
+
+## 📦 Installation & Running the App
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Haki-Celmeta/Inventory-Management.git
+cd inventory-management
+```
+
+Install dependencies:
+```bash
+npm install
+```
+
+Run the development server:
+```bash
+npm run dev
+```
+
+Run unit tests:
+```bash
+npm run test
+```
+
+
