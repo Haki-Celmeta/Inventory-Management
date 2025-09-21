@@ -17,9 +17,9 @@ const OverallCard = ({number, extension, color}) => {
 const Overall = () => {
     const {getStatusCompleted, getStatusInProgress, getStatusOnHold} = useJobSite()
 
-    const completedLength = getStatusCompleted().length
-    const inProgressLength = getStatusInProgress().length
-    const onHoldLength = getStatusOnHold().length
+    const completedLength = getStatusCompleted() ? getStatusCompleted().length : 0
+    const inProgressLength = getStatusInProgress() ? getStatusInProgress().length : 0
+    const onHoldLength = getStatusOnHold() ? getStatusOnHold().length : 0
 
     return (
         <div className={'overall'}>

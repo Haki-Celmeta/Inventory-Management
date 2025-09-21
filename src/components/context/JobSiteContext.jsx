@@ -2,6 +2,8 @@ import {createContext, useContext, useState} from "react";
 
 const JobSiteContext =  createContext({
     data: [],
+    getValidStatus: () => {},
+    isStatusValid: () => {},
     addJobSite: () => {},
     getJobSite: () => {},
     addInventory: () => {},
@@ -20,7 +22,7 @@ const JobSiteProvider = ({children}) => {
         {
             id: 1,
             address: '123 E 34th, New York',
-            status: 'on hold',
+            status: 'in progress',
             categoryIncluded: {
                 shed: [{
                     id: 1,
@@ -36,6 +38,18 @@ const JobSiteProvider = ({children}) => {
     ]);
     const [nextJobSiteId, setNextJobSiteId] = useState(2);
     const [nextInventoryId, setNextInventoryId] = useState(2);
+
+    // Valid Status
+    const getValidStatus = () => {
+        return ['in progress', 'on hold', 'completed']
+    }
+
+    // Check if a given status is true or false
+    const isStatusValid = (status) => {
+        if(!status) return false
+        const validStatuses = getValidStatus()
+        return validStatuses.includes(status)
+    }
 
     // Add job site to data
     const addJobSite = (jobSiteData) => {
@@ -200,6 +214,8 @@ const JobSiteProvider = ({children}) => {
 
     const value = {
         data,
+        getValidStatus,
+        isStatusValid,
         addJobSite,
         getJobSite,
         addInventory,

@@ -1,13 +1,10 @@
 import "./tableOfSites.css"
 import Dropdown from "../dropdown/Dropdown.jsx";
 import {capitalizeEachWord, darkColor, extraLightColor, lightColor} from "../utils.js";
+import {useJobSite} from "../context/JobSiteContext.jsx";
 
 const TableOfSites = ({jobsites}) => {
-    const dropdownItems = [
-        "completed",
-        "in progress",
-        "on hold",
-    ]
+    const {isStatusValid} = useJobSite()
 
     // Select color switch
     const selectColor = (item) => {
@@ -34,13 +31,13 @@ const TableOfSites = ({jobsites}) => {
             <tbody>
                 {jobsites.map((jobsite) => (
                     <tr key={jobsite.id}>
-                        <td>{jobsite.name}</td>
+                        <td>{jobsite.address}</td>
                         <td className={'status-container'}>
                             <div
                                 className={'jobsite-status'}
-                                style={{backgroundColor: selectColor(jobsite.status)}}
+                                style={{backgroundColor: isStatusValid(jobsite.status) ? selectColor(jobsite.status) : selectColor('on hold')}}
                             >
-                                {capitalizeEachWord(jobsite.status)}
+                                {isStatusValid(jobsite.status) ? capitalizeEachWord(jobsite.status) : 'Unverified'}
                             </div>
                         </td>
                     </tr>

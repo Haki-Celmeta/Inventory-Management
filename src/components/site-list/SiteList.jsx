@@ -5,6 +5,7 @@ import TableOfSites from "./TableOfSites.jsx";
 import {useState} from "react";
 import Modal from "../modal/Modal.jsx";
 import CreateSiteModal from "./CreateSiteModal.jsx";
+import {useJobSite} from "../context/JobSiteContext.jsx";
 
 const mockJobList = [
     {
@@ -36,6 +37,7 @@ const mockJobList = [
 
 const SiteList = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const {data} = useJobSite()
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
@@ -58,7 +60,7 @@ const SiteList = () => {
                 </div>
             </div>
             <div className={'jobsite-table-container'}>
-                <TableOfSites jobsites={mockJobList} />
+                <TableOfSites jobsites={data} />
             </div>
 
             <CreateSiteModal isModalOpen={isModalOpen} closeModal={closeModal} />
