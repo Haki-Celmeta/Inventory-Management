@@ -1,6 +1,5 @@
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import JobSitesList from './pages/JobSitesList.jsx'
-import {createContext} from "react";
 import JobSiteProvider from "./components/context/JobSiteContext.jsx";
 
 const Router = () => {

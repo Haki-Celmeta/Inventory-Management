@@ -1,8 +1,14 @@
 import "./overall.css"
 import {capitalizeEachWord} from "../utils.js";
-import {useContext, useRef} from "react";
-import JobSiteContext, {useJobSite} from "../context/JobSiteContext.jsx";
+import {useRef} from "react";
+import {useJobSite} from "../context/JobSiteContext.jsx";
 
+/**
+ * Individual status card displaying count and label with colored background.
+ * @param {number} number - Count to display
+ * @param {string} extension - Label text for the card
+ * @param {string} color - CSS color variable name for background
+ */
 const OverallCard = ({number, extension, color}) => {
     const varColor = useRef(`var(--light-${color})`)
 
@@ -14,6 +20,10 @@ const OverallCard = ({number, extension, color}) => {
     )
 }
 
+/**
+ * Dashboard component displaying job site status overview cards.
+ * Shows counts for in-progress, completed, and on-hold job sites.
+ */
 const Overall = () => {
     const {getStatusCompleted, getStatusInProgress, getStatusOnHold} = useJobSite()
 

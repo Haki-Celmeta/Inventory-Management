@@ -1,12 +1,15 @@
 import {Search} from 'lucide-react'
-import "./siteList.css"
+import "./styles/siteList.css"
 import Button from "../button/Button.jsx";
 import TableOfSites from "./TableOfSites.jsx";
 import {useState} from "react";
-import Modal from "../modal/Modal.jsx";
 import CreateSiteModal from "./CreateSiteModal.jsx";
 import {useJobSite} from "../context/JobSiteContext.jsx";
 
+/**
+ * Job site list component with search functionality and create modal.
+ * Displays the jobsite data on a table
+ */
 const SiteList = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [searchText, setSearchText] = useState('');
@@ -35,7 +38,7 @@ const SiteList = () => {
                     />
                 </div>
                 <div className={'create'}>
-                    <Button variant={'save'} color={'light'} onClick={openModal}/>
+                    <Button variant={'create'} color={'light'} onClick={openModal}/>
                 </div>
             </div>
             <div className={'jobsite-table-container'}>

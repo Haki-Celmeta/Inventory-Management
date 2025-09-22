@@ -1,11 +1,15 @@
 import Modal from "../modal/Modal.jsx";
 import Button from "../button/Button.jsx";
 import {CheckboxDropdown, RadioDropdown} from "../dropdown/Dropdown.jsx";
-import {extraLightColor, mediumColor} from "../utils.js";
-import {X} from 'lucide-react'
+import {X} from 'lucide-react';
 import {useState} from "react";
 import {useJobSite} from "../context/JobSiteContext.jsx";
 
+/**
+ * Modal component for creating new job sites with form inputs and validation.
+ * @param {boolean} isModalOpen - Controls modal visibility
+ * @param {function} closeModal - Function to close the modal and reset form
+ */
 const CreateSiteModal = ({isModalOpen, closeModal}) => {
     const [status, setStatus] = useState(null);
     const [categories, setCategories] = useState([]);

@@ -1,8 +1,13 @@
-import "./tableOfSites.css"
+import "./styles/tableOfSites.css"
 import {capitalizeEachWord, darkColor, extraLightColor, lightColor} from "../utils.js";
 import {useJobSite} from "../context/JobSiteContext.jsx";
 import {Link} from "react-router-dom";
 
+/**
+ * Table component displaying jobsites in reverse chronological order.
+ * Shows jobsite names as clickable links and status with color badges.
+ * @param {Array} jobsites - Array of jobsite objects to display
+ */
 const TableOfSites = ({jobsites}) => {
     const {isStatusValid} = useJobSite()
 

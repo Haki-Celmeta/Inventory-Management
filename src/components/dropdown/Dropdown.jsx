@@ -3,6 +3,12 @@ import "./dropdown.css"
 import {capitalizeEachWord, darkColor, extraLightColor, lightColor} from "../utils.js";
 import {ChevronDown, Check} from 'lucide-react'
 
+/**
+ * Radio-style dropdown component for single item selection.
+ * @param {Array} items - Array of items (strings or objects with label/color properties)
+ * @param {string|Object} selectedItem - Currently selected item
+ * @param {function} setSelectedItem - Function to update selected item
+ */
 export const RadioDropdown = ({ items, selectedItem, setSelectedItem }) => {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
@@ -80,6 +86,12 @@ export const RadioDropdown = ({ items, selectedItem, setSelectedItem }) => {
     );
 };
 
+/**
+ * Checkbox-style dropdown component for multiple item selection.
+ * @param {Array} items - Array of items (strings or objects with label/color properties)
+ * @param {Array} selectedItems - Array of currently selected items
+ * @param {function} setSelectedItems - Function to update selected items array
+ */
 export const CheckboxDropdown = ({ items, selectedItems, setSelectedItems }) => {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);

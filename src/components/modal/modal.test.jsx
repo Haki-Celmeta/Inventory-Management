@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import Modal from './Modal.jsx';
 
 // Tests for the Modal component
-describe('Modal Component', () => {
+describe('Modal', () => {
     const mockOnClose = vi.fn();
 
     beforeEach(() => {
@@ -84,7 +84,6 @@ describe('Modal Component', () => {
         });
     });
 
-    // CSS classes and structure
     describe('CSS classes and structure', () => {
         it('applies correct CSS classes', () => {
             render(

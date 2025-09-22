@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import Button from './Button';
 
 // Tests for the button component
-describe('Button Component', () => {
+describe('Button', () => {
     // Create button
     describe('Variant: create', () => {
         it('renders create button', () => {
@@ -133,7 +133,6 @@ describe('Button Component', () => {
         });
     });
 
-    // Tests for css
     describe('CSS classes and structure', () => {
         it('applies correct CSS class', () => {
             render(<Button variant="create" colorTone="light" />);

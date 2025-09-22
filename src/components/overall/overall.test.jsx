@@ -24,7 +24,7 @@ describe('Overall', () => {
         expect(cards[2]).toHaveStyle('background-color: var(--light-red)')
     })
 
-    it('should have correct overall structure', () => {
+    it('should have correct overall structure (3)', () => {
         render(<Overall />)
 
         const overallContainer = document.querySelector('.overall')

@@ -2,6 +2,12 @@ import {X, Plus, Check, ArrowLeft} from 'lucide-react'
 import {capitalizeEachWord, lightColor, mediumColor} from "../utils.js";
 import "./button.css"
 
+/**
+ * Customizable button component with predefined variants and color tones.
+ * @param {string} variant - Button type: 'create', 'save', 'cancel', 'back', 'default'
+ * @param {string} colorTone - Color intensity: 'light' or 'medium'
+ * @param {function} onClick - Click handler function
+ */
 const Button = ({variant = 'default', colorTone = 'medium', onClick}) => {
     const iconSize = 20
 
