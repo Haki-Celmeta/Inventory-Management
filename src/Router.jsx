@@ -1,6 +1,7 @@
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import JobSitesList from './pages/JobSitesList.jsx'
 import JobSiteProvider from "./components/context/JobSiteContext.jsx";
+import NotFoundPage from "./pages/NotFound.jsx";
 
 const Router = () => {
     const router = createBrowserRouter([
@@ -10,10 +11,10 @@ const Router = () => {
         },
 
         // 404 Not Found page
-        // {
-        //     path: '*',
-        //     element: <NotFound />
-        // }
+        {
+            path: '*',
+            element: <NotFoundPage />
+        }
     ])
 
     return (
