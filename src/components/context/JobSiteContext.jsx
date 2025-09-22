@@ -1,7 +1,10 @@
 import {createContext, useContext, useState} from "react";
+import {extraLightColor, mediumColor} from "../utils.js";
 
 const JobSiteContext =  createContext({
     data: [],
+    categoryItems: [],
+    statusItems: [],
     getValidStatus: () => {},
     isStatusValid: () => {},
     addJobSite: () => {},
@@ -39,9 +42,23 @@ const JobSiteProvider = ({children}) => {
     const [nextJobSiteId, setNextJobSiteId] = useState(2);
     const [nextInventoryId, setNextInventoryId] = useState(2);
 
+    // all categories available
+    const categoryItems = [
+        {label: "Sidewalk Shed", color: mediumColor('green')},
+        {label: "Scaffold", color: mediumColor('yellow')},
+        {label: "Shoring", color: "var(--purple)"},
+    ]
+
+    // all status of job site available
+    const statusItems = [
+        {label: "Completed", color: mediumColor('green')},
+        {label: "On Hold", color: mediumColor('yellow')},
+        {label: "In Progress", color: extraLightColor('green')},
+    ]
+
     // Valid Status
     const getValidStatus = () => {
-        return ['in progress', 'on hold', 'completed']
+        return statusItems.map(status => status.label.toLowerCase())
     }
 
     // Check if a given status is true or false
@@ -53,16 +70,31 @@ const JobSiteProvider = ({children}) => {
 
     // Add job site to data
     const addJobSite = (jobSiteData) => {
+        // filter category
+        const categories = jobSiteData.categories.map(category => {
+            if(category.toLowerCase() === "sidewalk shed") {
+                return "shed"
+            }
+            return category.toLowerCase()
+        })
+
+        // it creates an object with fields of empty array
+        const createObject = (types) => {
+            const obj = {}
+
+            for(let i = 0; i < types.length; i++) {
+                obj[types[i]] = []
+            }
+
+            return obj
+        }
+
         // new job site object to be added
         const newJobSite = {
             id: nextJobSiteId,
             address: jobSiteData.address || '',
             status: jobSiteData.status || 'on hold',
-            categoryIncluded: {
-                shed: [],
-                scaffold: [],
-                shoring: []
-            },
+            categoryIncluded: createObject(categories),
             ...jobSiteData
         };
 
@@ -214,6 +246,8 @@ const JobSiteProvider = ({children}) => {
 
     const value = {
         data,
+        categoryItems,
+        statusItems,
         getValidStatus,
         isStatusValid,
         addJobSite,

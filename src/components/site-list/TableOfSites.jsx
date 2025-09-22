@@ -19,6 +19,16 @@ const TableOfSites = ({jobsites}) => {
         }
     }
 
+    const reverseJobSites = () => {
+        const arr = []
+
+        for(let i = jobsites.length - 1; i >= 0; i--) {
+            arr.push(jobsites[i]);
+        }
+
+        return arr;
+    }
+
     return (
         <table className={'jobsite-table'}>
             <thead>
@@ -28,7 +38,7 @@ const TableOfSites = ({jobsites}) => {
                 </tr>
             </thead>
             <tbody>
-                {jobsites.map((jobsite) => (
+                {reverseJobSites().map((jobsite) => (
                     <tr key={jobsite.id}>
                         <td>{jobsite.address}</td>
                         <td className={'status-container'}>

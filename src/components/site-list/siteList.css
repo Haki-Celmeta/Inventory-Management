@@ -90,3 +90,31 @@
     justify-content: end;
     margin-top: 6rem;
 }
+
+.create-site-modal .category-selected {
+    width: 66%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.create-site-modal .category-selected .category-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    gap: 5px;
+}
+
+.create-site-modal .category-selected .category-item .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+}
+.create-site-modal .category-selected .category-item .remove {
+    display: flex;
+    align-items: center;
+    background-color: red;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
