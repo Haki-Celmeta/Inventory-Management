@@ -1,6 +1,7 @@
 import "./tableOfSites.css"
 import {capitalizeEachWord, darkColor, extraLightColor, lightColor} from "../utils.js";
 import {useJobSite} from "../context/JobSiteContext.jsx";
+import {Link} from "react-router-dom";
 
 const TableOfSites = ({jobsites}) => {
     const {isStatusValid} = useJobSite()
@@ -40,7 +41,11 @@ const TableOfSites = ({jobsites}) => {
             <tbody>
                 {reverseJobSites().map((jobsite) => (
                     <tr key={jobsite.id}>
-                        <td>{jobsite.address}</td>
+                        <td>
+                            <Link to={`/jobsites/${jobsite.id}`}>
+                                {jobsite.address}
+                            </Link>
+                        </td>
                         <td className={'status-container'}>
                             <div
                                 className={'jobsite-status'}
