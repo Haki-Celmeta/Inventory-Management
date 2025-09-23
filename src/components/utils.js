@@ -66,3 +66,33 @@ export const darkColor = (c) => {
     if(!c) return `var(--dark-green)`
     return `var(--dark-${c})`
 }
+
+/**
+ * Given an array it converts the element in object field with empty array as value
+ * @param {array} arr - Array to convert
+ * @returns {Object} The converted object
+ */
+export const convertArrayToObject = (arr) => {
+    const obj = {}
+
+    for(let i = 0; i < arr.length; i++) {
+        obj[arr[i]] = []
+    }
+
+    return obj
+}
+
+/**
+ * Converts object keys to elements in an array
+ * @param {Object} obj - The object to be converted
+ * @returns {Array} The converted array
+ */
+export const convertObjectToArray = (obj) => {
+    const arr = []
+
+    for(let key in obj) {
+        arr.push(key)
+    }
+
+    return arr
+}

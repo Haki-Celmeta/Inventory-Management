@@ -1,10 +1,13 @@
 import {createContext, useContext, useState} from "react";
-import {extraLightColor, mediumColor} from "../utils.js";
+import {convertArrayToObject, extraLightColor, mediumColor} from "../utils.js";
 
 const JobSiteContext =  createContext({
     data: [],
     categoryItems: [],
     statusItems: [],
+    shedItems: [],
+    scaffoldItems: [],
+    shoringItems: [],
     getValidStatus: () => {},
     isStatusValid: () => {},
     addJobSite: () => {},
@@ -29,7 +32,7 @@ const JobSiteProvider = ({children}) => {
             categoryIncluded: {
                 shed: [{
                     id: 1,
-                    item: "Item 1",
+                    item: "Item shed 1",
                     quantity: 4,
                     description: "sjjfioiej jfoiesj ifjefje f",
                     notes: "ajsdoijfsjfjjfje"
@@ -56,6 +59,28 @@ const JobSiteProvider = ({children}) => {
         {label: "In Progress", color: extraLightColor('green')},
     ]
 
+    // service background color
+    let serviceColor = '#2e2e2e'
+
+    // sidewalk shed items to choose
+    const shedItems = [
+        {label: "Item shed 1", color: serviceColor},
+        {label: "Item shed 2", color: serviceColor},
+        {label: "Item shed 3", color: serviceColor},
+    ]
+    // scaffold items to choose
+    const scaffoldItems = [
+        {label: "Item scaffold 1", color: serviceColor},
+        {label: "Item scaffold 2", color: serviceColor},
+        {label: "Item scaffold 3", color: serviceColor},
+    ]
+    // shoring items to choose
+    const shoringItems = [
+        {label: "Item shoring 1", color: serviceColor},
+        {label: "Item shoring 2", color: serviceColor},
+        {label: "Item shoring 3", color: serviceColor},
+    ]
+
     // Valid Status
     const getValidStatus = () => {
         return statusItems.map(status => status.label.toLowerCase())
@@ -78,23 +103,14 @@ const JobSiteProvider = ({children}) => {
             return category.toLowerCase()
         })
 
-        // it creates an object with fields of empty array
-        const createObject = (types) => {
-            const obj = {}
-
-            for(let i = 0; i < types.length; i++) {
-                obj[types[i]] = []
-            }
-
-            return obj
-        }
+        const convertedCategories = convertArrayToObject(categories)
 
         // new job site object to be added
         const newJobSite = {
             id: nextJobSiteId,
             address: jobSiteData.address || '',
             status: jobSiteData.status || 'on hold',
-            categoryIncluded: createObject(categories),
+            categoryIncluded: convertedCategories,
             ...jobSiteData
         };
 
@@ -183,14 +199,6 @@ const JobSiteProvider = ({children}) => {
         const jobsite = getJobSite(jobSiteId);
         if (!jobsite) return false;
 
-        // Check if inventory exists
-        const inventoryExists = jobsite.categoryIncluded[category].some(
-            item => item.id === inventoryId
-        );
-
-        // If it does not exist then return false
-        if (!inventoryExists) return false;
-
         // Update setData
         setData(prevData =>
             prevData.map(site =>
@@ -248,6 +256,9 @@ const JobSiteProvider = ({children}) => {
         data,
         categoryItems,
         statusItems,
+        shedItems,
+        scaffoldItems,
+        shoringItems,
         getValidStatus,
         isStatusValid,
         addJobSite,

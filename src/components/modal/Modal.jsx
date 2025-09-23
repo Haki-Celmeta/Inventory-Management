@@ -22,7 +22,7 @@ const Modal = ({children, title, isOpen, onClose}) => {
             <div className="modal" data-testid={'modal'}>
                 <div className="modal-header" data-testid={'modal-header'}>
                     <h2 className="modal-title">{title}</h2>
-                    <button className="modal-close-btn" onClick={onClose}>
+                    <button className="modal-close-btn" onClick={onClose} aria-label="Close">
                         <X size={20}/>
                     </button>
                 </div>

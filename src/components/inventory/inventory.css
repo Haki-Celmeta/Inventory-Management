@@ -1,0 +1,151 @@
+.inventory-container {
+    display: flex;
+    margin: var(--page-margin);
+    gap: 0.5rem;
+}
+
+.inventory-card {
+    width: 100%;
+    min-height: 400px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.inventory-card .card-title {
+    background-color: var(--light-gray);
+    padding: var(--list-padding);
+    border-radius: 6px 6px 0 0;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inventory-card .card-title .search {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #fff;
+    padding: 0.25rem 1rem;
+    border-radius: 6px;
+}
+
+.inventory-card .card-title .search input {
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.inventory-card .card-body {
+    padding: var(--list-padding);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.inventory-container .inventory-card:first-child {
+    flex: 1;
+}
+
+.inventory-container .inventory-card:last-child {
+    flex: 3;
+}
+
+.inventory-container .inventory-card .badges {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inventory-container .inventory-card .badge {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.4rem 0.5rem;
+    background: #f3f3f3;
+    border: none;
+    border-radius: 6px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.inventory-container .inventory-card .badge.selected {
+    background: var(--dark-green);
+    color: #fff;
+}
+
+.inventory-container .inventory-card .badge:hover {
+    background: var(--dark-green);
+    color: #fff;
+    opacity: 0.8;
+}
+
+.inventory-container .inventory-card .back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: 3rem;
+}
+
+.inventory-container .inventory-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.inventory-container .inventory-modal form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.inventory-container .inventory-modal form .item-quantity {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.inventory-container .inventory-modal form .item-quantity div:first-child {
+    flex: 1;
+}
+
+.inventory-container .inventory-modal form .item-quantity div:last-child {
+    flex: 1;
+}
+
+.inventory-container .inventory-card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.inventory-container .inventory-card th,
+.inventory-container .inventory-card td {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+}
+
+.inventory-container .inventory-card th {
+    font-weight: 600;
+}
+.inventory-container .inventory-card tbody tr {
+    cursor: pointer;
+}
+
+.inventory-container .inventory-card tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.inventory-container .inventory-card tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.inventory-container .no-service {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

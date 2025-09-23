@@ -1,0 +1,49 @@
+.error-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-container .error-content {
+    padding: 1rem 2rem;
+    border-radius: 6px;
+}
+
+.error-container .error-content .error-message {
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.error-container .error-content .error-message span:first-child {
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+}
+
+.error-container .error-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.error-container .error-buttons button {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-width: 100px;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.error-container .error-buttons button:hover {
+    background: #fff;
+}
