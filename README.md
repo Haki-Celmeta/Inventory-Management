@@ -10,12 +10,14 @@ The app allows users to:
 - Search and filter job sites and inventory items.
 - Update inventory items by editing table cells.
 
+All the project is done in React.js using context api and lucide react for icons.
+
 ---
 
 ## 🚀 Tech Stack
 - **React (with Vite)** – Frontend framework & development environment
 - **Vanilla CSS** – Styling
-- **React Testing Library / Jest** – Unit testing
+- **React Testing Library / Vitest** – Unit testing
 
 ---
 
@@ -45,7 +47,7 @@ npm run dev
 
 Run unit tests:
 ```bash
-npm run test
+npm test
 ```
 
 
