@@ -50,4 +50,17 @@ Run unit tests:
 npm test
 ```
 
+## Improvement
+Improvements we can make related to security and scaling.
 
+### How to make the app more secure?
+1. Adding validation to every input, using min and max length, trimming and sanitizing for XSS attack.
+2. Adding authentication with token rotation
+3. Handle errors safely
+4. Using only HTTPS
+
+### How to scale the app?
+1. Reusable pure components
+2. Lazy loading
+3. Using state management strategy with context api, custom hooks, zustand or redux
+4. Automated test (unit test, integration test and end-to-end test)
